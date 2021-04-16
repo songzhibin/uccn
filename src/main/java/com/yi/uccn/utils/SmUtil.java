@@ -3,6 +3,7 @@ package com.yi.uccn.utils;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSONObject;
 import com.yi.uccn.config.Config;
 import com.yi.uccn.model.Sm;
 import org.springframework.web.multipart.MultipartFile;
@@ -87,5 +88,44 @@ public class SmUtil {
         }
 
         return file;
+    }
+
+    public static Sm saveFile2(MultipartFile multipartFile, boolean ssl, String format){
+//        JSONObject json = new JSONObject();
+//        json.put("source", getFile(multipartFile));
+//        json.put("type", "file");
+//        json.put("action", "upload");
+//        json.put("nsfw", 0);
+//        json.put("auth_token", "a6ecb061ae004d4bb8a59d6dc5c97b885771b9d8");
+//
+//        String smStr = HttpRequest.post("https://imgtu.com/json")
+//                .header("Content-Type", "multipart/form-data;")
+//                .body(json)
+//                .execute().body();
+
+        Map<String, Object> map = new HashMap<>(16);
+        map.put("source", getFile(multipartFile));
+        map.put("type", "file");
+        map.put("action", "upload");
+        map.put("nsfw", 0);
+        map.put("auth_token", "a6ecb061ae004d4bb8a59d6dc5c97b885771b9d8");
+
+        String smStr = HttpUtil.post("https://imgtu.com/json", map);
+        System.out.println(smStr);
+
+
+
+        return JSONUtil.toBean(smStr, Sm.class);
+    }
+
+    public static void main(String[] args) {
+        HashMap<String,String> para = new HashMap<String, String>();
+        HashMap<String,String> header = new HashMap<String, String>();
+        HashMap<String,String> body = new HashMap<String, String>();
+        body.put("smfile","D:\\myself\\photo\\4.jpg");
+
+        JSONObject data = Image.upload(header, body);
+        System.out.println(data);
+
     }
 }

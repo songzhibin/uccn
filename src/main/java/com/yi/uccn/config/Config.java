@@ -20,7 +20,7 @@ public class Config {
     /**
      * sm图床上传地址
      */
-    public static final String SM_URL = "https://sm.ms/api/upload";
+    public static final String SM_URL = "https://sm.ms/api/v2/upload";
 
     /**
      * redis token超时时间（ms）

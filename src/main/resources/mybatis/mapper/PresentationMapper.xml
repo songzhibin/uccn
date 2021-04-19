@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yi.uccn.dao.PresentationMapper">
-  <resultMap id="BaseResultMap" type="com.yi.uccn.model.Presentation">
+<mapper namespace="com.yuzhi.home.dao.PresentationMapper">
+  <resultMap id="BaseResultMap" type="com.yuzhi.home.model.Presentation">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="trademark" jdbcType="VARCHAR" property="trademark" />
@@ -17,7 +17,7 @@
     <result column="status" jdbcType="TINYINT" property="status" />
     <result column="crateDate" jdbcType="TIMESTAMP" property="cratedate" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.yi.uccn.model.Presentation">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.yuzhi.home.model.Presentation">
     <result column="brief" jdbcType="LONGVARCHAR" property="brief" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -86,7 +86,7 @@
   <sql id="Blob_Column_List">
     brief
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.yi.uccn.model.PresentationExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.yuzhi.home.model.PresentationExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -102,7 +102,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.yi.uccn.model.PresentationExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.yuzhi.home.model.PresentationExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -136,13 +136,13 @@
     delete from presentation
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yi.uccn.model.PresentationExample">
+  <delete id="deleteByExample" parameterType="com.yuzhi.home.model.PresentationExample">
     delete from presentation
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yi.uccn.model.Presentation">
+  <insert id="insert" parameterType="com.yuzhi.home.model.Presentation">
     insert into presentation (id, title, trademark, 
       marketing, trademark_small_label_1, trademark_small_label_2, 
       trademark_small_label_3, trademark_small_label_4, 
@@ -158,7 +158,7 @@
       #{status,jdbcType=TINYINT}, #{cratedate,jdbcType=TIMESTAMP}, #{brief,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.yi.uccn.model.Presentation">
+  <insert id="insertSelective" parameterType="com.yuzhi.home.model.Presentation">
     insert into presentation
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -255,7 +255,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yi.uccn.model.PresentationExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.yuzhi.home.model.PresentationExample" resultType="java.lang.Long">
     select count(*) from presentation
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -355,7 +355,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yi.uccn.model.Presentation">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yuzhi.home.model.Presentation">
     update presentation
     <set>
       <if test="title != null">
@@ -403,7 +403,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yi.uccn.model.Presentation">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yuzhi.home.model.Presentation">
     update presentation
     set title = #{title,jdbcType=VARCHAR},
       trademark = #{trademark,jdbcType=VARCHAR},
@@ -421,7 +421,7 @@
       brief = #{brief,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yi.uccn.model.Presentation">
+  <update id="updateByPrimaryKey" parameterType="com.yuzhi.home.model.Presentation">
     update presentation
     set title = #{title,jdbcType=VARCHAR},
       trademark = #{trademark,jdbcType=VARCHAR},

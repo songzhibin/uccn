@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yi.uccn.dao.ContactMapper">
-  <resultMap id="BaseResultMap" type="com.yi.uccn.model.Contact">
+<mapper namespace="com.yuzhi.home.dao.ContactMapper">
+  <resultMap id="BaseResultMap" type="com.yuzhi.home.model.Contact">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
@@ -72,7 +72,7 @@
   <sql id="Base_Column_List">
     id, address, phone, email, qq, wx, ownership, crateDate
   </sql>
-  <select id="selectByExample" parameterType="com.yi.uccn.model.ContactExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.yuzhi.home.model.ContactExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -104,13 +104,13 @@
     delete from contact
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yi.uccn.model.ContactExample">
+  <delete id="deleteByExample" parameterType="com.yuzhi.home.model.ContactExample">
     delete from contact
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yi.uccn.model.Contact">
+  <insert id="insert" parameterType="com.yuzhi.home.model.Contact">
     insert into contact (id, address, phone, 
       email, qq, wx, ownership, 
       crateDate)
@@ -118,7 +118,7 @@
       #{email,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{wx,jdbcType=VARCHAR}, #{ownership,jdbcType=VARCHAR}, 
       #{cratedate,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.yi.uccn.model.Contact">
+  <insert id="insertSelective" parameterType="com.yuzhi.home.model.Contact">
     insert into contact
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -173,7 +173,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yi.uccn.model.ContactExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.yuzhi.home.model.ContactExample" resultType="java.lang.Long">
     select count(*) from contact
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -225,7 +225,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yi.uccn.model.Contact">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yuzhi.home.model.Contact">
     update contact
     <set>
       <if test="address != null">
@@ -252,7 +252,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yi.uccn.model.Contact">
+  <update id="updateByPrimaryKey" parameterType="com.yuzhi.home.model.Contact">
     update contact
     set address = #{address,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},

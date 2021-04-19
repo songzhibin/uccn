@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yi.uccn.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.yi.uccn.model.User">
+<mapper namespace="com.yuzhi.home.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.yuzhi.home.model.User">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List">
     id, name, password, type, email, status, crateDate
   </sql>
-  <select id="selectByExample" parameterType="com.yi.uccn.model.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.yuzhi.home.model.UserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -103,13 +103,13 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yi.uccn.model.UserExample">
+  <delete id="deleteByExample" parameterType="com.yuzhi.home.model.UserExample">
     delete from user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yi.uccn.model.User">
+  <insert id="insert" parameterType="com.yuzhi.home.model.User">
     insert into user (id, name, password, 
       type, email, status, 
       crateDate)
@@ -117,7 +117,7 @@
       #{type,jdbcType=TINYINT}, #{email,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
       #{cratedate,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.yi.uccn.model.User">
+  <insert id="insertSelective" parameterType="com.yuzhi.home.model.User">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -166,7 +166,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yi.uccn.model.UserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.yuzhi.home.model.UserExample" resultType="java.lang.Long">
     select count(*) from user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -214,7 +214,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yi.uccn.model.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yuzhi.home.model.User">
     update user
     <set>
       <if test="name != null">
@@ -238,7 +238,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yi.uccn.model.User">
+  <update id="updateByPrimaryKey" parameterType="com.yuzhi.home.model.User">
     update user
     set name = #{name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

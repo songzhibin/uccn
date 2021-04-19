@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>UCCN</title>
+	<title>宇治后台管理</title>
 	<meta name="renderer" content="webkit" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -18,7 +18,7 @@
 	<</video>
 	<div class="video_mask"></div>
 	<div class="login">
-	    <h1>UCCN后台管理</h1>
+	    <h1>Yuzhi后台管理</h1>
 	    <form class="layui-form">
 	    	<div class="layui-form-item">
 				<input class="layui-input" name="name" placeholder="用户名" lay-verify="required" type="text" autocomplete="off">

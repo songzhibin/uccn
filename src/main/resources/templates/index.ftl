@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="icon" href="images/home_256.ico" type="image/x-icon"/>
+
 </head>
 
 <body>

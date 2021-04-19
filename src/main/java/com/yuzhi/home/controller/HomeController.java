@@ -17,7 +17,7 @@ import java.util.Map;
 
 /**
  * 官网
- * @author YI
+ * @author soso
  * @date 2018-8-29 14:49:05
  */
 @RequestMapping("/open")

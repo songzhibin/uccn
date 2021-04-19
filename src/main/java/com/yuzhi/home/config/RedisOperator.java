@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 使用redisTemplate的操作实现类
  *
- * @author YI
+ * @author soso
  * @date 2018-6-12 10:54:28
  */
 @Component

@@ -17,7 +17,7 @@ import java.io.OutputStream;
 
 /**
  * 拦截器 校验前端参数
- * @author YI
+ * @author soso
  * @date 2018-6-14 09:52:04
  */
 public class ApiInterceptor implements HandlerInterceptor {

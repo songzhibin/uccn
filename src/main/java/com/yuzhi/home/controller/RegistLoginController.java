@@ -24,7 +24,7 @@ import java.util.List;
 
 /**
  * 登录注册
- * @author YI
+ * @author soso
  * @date 2018-7-19 15:58:19
  */
 @Controller()

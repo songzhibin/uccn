@@ -4,7 +4,7 @@ import com.yuzhi.home.model.Presentation;
 
 /**
  * 简介
- * @author YI
+ * @author soso
  * @date 2018-8-29 23:18:13
  */
 public interface PresentationService {

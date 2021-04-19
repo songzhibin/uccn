@@ -2,7 +2,7 @@ package com.yuzhi.home.utils;
 
 /**
  * 命令指令
- * @author YI
+ * @author soso
  * @date 2018-4-29 19:15:37
  */
 public enum Status {

@@ -3,7 +3,7 @@ package com.yuzhi.home.model;
 import java.io.Serializable;
 
 /**
- * @author 
+ * @author soso
  */
 public class ArticleWithBLOBs extends Article implements Serializable {
     /**

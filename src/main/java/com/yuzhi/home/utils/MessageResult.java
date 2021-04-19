@@ -2,7 +2,7 @@ package com.yuzhi.home.utils;
 
 /**
  * 统一返回数据格式
- * @author YI
+ * @author soso
  * @date 2018-8-22 11:25:56
  */
 public class MessageResult<T> {

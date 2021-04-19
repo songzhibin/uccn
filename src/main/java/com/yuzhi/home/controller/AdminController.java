@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 网站管理
- * @author YI
+ * @author soso
  * @date 2018-8-29 11:34:58
  */
 @RequestMapping("/admin")

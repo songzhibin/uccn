@@ -2,7 +2,7 @@ package com.yuzhi.home.model;
 
 /**
  * 图床
- * @author YI
+ * @author soso
  * @date 2019-1-11 09:26:29
  */
 public class Sm {

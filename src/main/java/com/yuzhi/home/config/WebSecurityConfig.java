@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 登录检验拦截
- * @author YI
+ * @author soso
  * @date 2018-7-19 14:55:13
  */
 @Configuration

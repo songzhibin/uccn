@@ -10,7 +10,7 @@
     <springProperty scope="context" name="STDOUT" source="log.stdout" defaultValue="STDOUT"/>
 
     <!-- 日志文件名称-->
-    <property name="LOG_PREFIX" value="spring-boot-mybatis" />
+    <property name="LOG_PREFIX" value="yuzhi-home" />
 
     <!-- 日志文件编码-->
     <property name="LOG_CHARSET" value="UTF-8" />
@@ -21,7 +21,7 @@
     <!--对日志进行格式化-->
     <property name="LOG_MSG" value="- | [%d{yyyyMMdd HH:mm:ss.SSS}] | [%level] | [${HOSTNAME}] | [%thread] | [%logger{36}] | --> %msg|%n "/>
 
-    <!--文件大小，默认10MB-->
+    <!--文件大小，默认50MB-->
     <property name="MAX_FILE_SIZE" value="50MB" />
 
     <!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志-->
@@ -43,18 +43,18 @@
     <!-- 定义 ALL 日志的输出方式:-->
     <appender name="FILE_ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--日志文件路径，日志文件名称-->
-        <File>${LOG_HOME}/all_${LOG_PREFIX}.log</File>
+        <File>${LOG_HOME}/${LOG_PREFIX}.log</File>
 
-        <!-- 设置滚动策略，当天的日志大小超过 ${MAX_FILE_SIZE} 文件大小时候，新的内容写入新的文件， 默认10MB -->
+        <!-- 设置滚动策略，当天的日志大小超过 ${MAX_FILE_SIZE} 文件大小时候，新的内容写入新的文件， 默认50MB -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 
             <!--日志文件路径，新的 ALL 日志文件名称，“ i ” 是个变量 -->
-            <FileNamePattern>${LOG_DIR}/all_${LOG_PREFIX}%i.log</FileNamePattern>
+            <FileNamePattern>${LOG_DIR}/${LOG_PREFIX}%i.log</FileNamePattern>
 
             <!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志-->
             <MaxHistory>${MAX_HISTORY}</MaxHistory>
 
-            <!--当天的日志大小超过 ${MAX_FILE_SIZE} 文件大小时候，新的内容写入新的文件， 默认10MB-->
+            <!--当天的日志大小超过 ${MAX_FILE_SIZE} 文件大小时候，新的内容写入新的文件， 默认50MB-->
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
@@ -76,9 +76,9 @@
             <OnMatch>ACCEPT</OnMatch>
         </filter>
         <!--日志文件路径，日志文件名称-->
-        <File>${LOG_HOME}/err_${LOG_PREFIX}.log</File>
+        <File>${LOG_HOME}/${LOG_PREFIX}_err.log</File>
 
-        <!-- 设置滚动策略，当天的日志大小超过 ${MAX_FILE_SIZE} 文件大小时候，新的内容写入新的文件， 默认10MB -->
+        <!-- 设置滚动策略，当天的日志大小超过 ${MAX_FILE_SIZE} 文件大小时候，新的内容写入新的文件， 默认50MB -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 
             <!--日志文件路径，新的 ERR 日志文件名称，“ i ” 是个变量 -->
@@ -87,7 +87,7 @@
             <!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志-->
             <MaxHistory>${MAX_HISTORY}</MaxHistory>
 
-            <!--当天的日志大小超过 ${MAX_FILE_SIZE} 文件大小时候，新的内容写入新的文件， 默认10MB-->
+            <!--当天的日志大小超过 ${MAX_FILE_SIZE} 文件大小时候，新的内容写入新的文件， 默认50MB-->
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>

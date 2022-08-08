@@ -11,5 +11,5 @@
 
 #### 使用说明
 
-官网地址: http://bosschat.cn
-后台管理系统: http://bosschat.cn/login
+官网地址: http://realitymi.cn
+后台管理系统: http://realitymi.com/login

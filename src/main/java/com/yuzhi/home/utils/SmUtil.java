@@ -4,7 +4,6 @@ import cn.hutool.core.io.FileUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
-import com.alibaba.fastjson.JSONObject;
 import com.yuzhi.home.config.Config;
 import com.yuzhi.home.model.Sm;
 import org.springframework.web.multipart.MultipartFile;
@@ -97,13 +96,19 @@ public class SmUtil {
     }
 
     public static void main(String[] args) {
-        HashMap<String, String> para = new HashMap<String, String>();
-        HashMap<String, String> header = new HashMap<String, String>();
-        HashMap<String, String> body = new HashMap<String, String>();
-        body.put("smfile", "D:\\myself\\photo\\4.jpg");
-
-        JSONObject data = Image.upload(header, body);
-        System.out.println(data);
-
+        double a = 3 * 0.1;
+        double b = 0.3;
+        System.out.println(a == b);
     }
+
+//    public static void main(String[] args) {
+//        HashMap<String, String> para = new HashMap<String, String>();
+//        HashMap<String, String> header = new HashMap<String, String>();
+//        HashMap<String, String> body = new HashMap<String, String>();
+//        body.put("smfile", "D:\\myself\\photo\\4.jpg");
+//
+//        JSONObject data = Image.upload(header, body);
+//        System.out.println(data);
+//
+//    }
 }
